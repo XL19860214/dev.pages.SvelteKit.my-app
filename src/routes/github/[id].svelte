@@ -1,5 +1,6 @@
 <script>
     export let id;
+    export let joke;
 </script>
 
 <svelte:head>
@@ -7,5 +8,8 @@
 </svelte:head>
 
 <div>
-    <img src="https://avatars.githubusercontent.com/u/{id}">
+    <figure>
+        <img src="https://avatars.githubusercontent.com/u/{id}" alt="">
+        <figcaption>{joke}</figcaption>
+    </figure>
 </div>
