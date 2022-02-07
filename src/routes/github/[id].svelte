@@ -17,13 +17,13 @@
         e.preventDefault();
         invalidate(`/github/${idValue}`);
         idValue--;
-        goto(`/github/${idValue}`, {replaceState: true});
+        goto(`/github/${idValue}`);
     }
     let handleNext = (e) => {
         e.preventDefault();
         invalidate(`/github/${idValue}`);
         idValue++;
-        goto(`/github/${idValue}`, {replaceState: true});
+        goto(`/github/${idValue}`);
     }
 </script>
 

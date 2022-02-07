@@ -1,6 +1,17 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import logo from './svelte-logo.svg';
+    import {
+        goto,
+        invalidate
+    } from '$app/navigation';
+
+	let randomGithubJoker = () => Math.floor(Math.random() * 1000000);
+	let githubJoker = randomGithubJoker();
+	let handleGithubJokerChange = (e) => {
+		e.preventDefault();
+		window.location = `/github/${githubJoker}`;
+	}
 </script>
 
 <header>
@@ -18,6 +29,9 @@
 			<li class:active={$page.url.pathname === '/'}><a sveltekit:prefetch href="/">Home</a></li>
 			<li class:active={$page.url.pathname === '/about'}>
 				<a sveltekit:prefetch href="/about">About</a>
+			</li>
+			<li class:active={$page.url.pathname.startsWith('/github')}>
+				<a sveltekit:prefetch href={"/github/" + githubJoker} on:click={handleGithubJokerChange}>GitHub Joker</a>
 			</li>
 			<li class:active={$page.url.pathname === '/todos'}>
 				<a sveltekit:prefetch href="/todos">Todos</a>
