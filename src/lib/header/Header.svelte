@@ -1,10 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import logo from './svelte-logo.svg';
-    import {
-        goto,
-        invalidate
-    } from '$app/navigation';
 
 	let randomGithubJoker = () => Math.floor(Math.random() * 1000000);
 	let githubJoker = randomGithubJoker();
