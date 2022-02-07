@@ -1,9 +1,10 @@
 export async function get({ request, platform }) {
-	const KV = platform.env.KV;
+	// const KV = platform.env.KV;
 
     return {
         body: {
-            value: await KV.get('svelte')
+            env: Object.entries(platform.env)
+            // value: await KV.get('svelte')
         }
     };
 }
