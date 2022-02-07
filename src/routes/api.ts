@@ -3,8 +3,8 @@ export async function get({ request, platform }) {
 
     return {
         body: {
-            env: Object.entries(platform.env)
-            // value: await KV.get('svelte')
+            env: Object.entries(platform.env),
+            kv_svelte: await platform.env.KV.get('svelte')
         }
     };
 }
